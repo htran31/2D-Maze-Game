@@ -1,2 +1,6 @@
-# boba-team-mhm
-2D Maze Game
+# 2D Maze Game
+by boba-team-mhm
+
+
+### Team Member:
+- 
