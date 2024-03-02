@@ -1,51 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HELLO</title>
+  <title>2D Maze Game</title>
   <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
-
   <div id="page">
-
-    <div id="Message-Container">
+    <!-- Game Over Announcement -->
+    <div id="Win-Message-Container">
       <div id="message">
         <h1>Congratulations!</h1>
-        <p>You are done.</p>
-        <p id="moves"></p>
-        <input id="okBtn" type="button" onclick="toggleVisablity('Message-Container')" value="Cool!" />
+        <p>Damn! You win!</p>
+        <input id="okBtn" type="button" onclick="newGame()" value="Win One More Time ?!" />
       </div>
     </div>
 
-    <br>
+    <div id="Lose-Message-Container">
+      <div id="message">
+        <h1>Oops!</h1>
+        <p>You lose!</p>
+        <input id="okBtn" type="button" onclick="tryAgain()" value="Damn! Try One More Time ?? " />
+      </div>
+    </div>
+
+    <!-- Buttons -->
     <div id="menu">
+      <input id="startMazeBtn" type="button" onclick="makeMaze()" value="New Game" />
       <div class="custom-select">
         <select id="diffSelect">
-                  <option value="10">Easy</option>
-                  <option value="15">Medium</option>
-                  <option value="25">Hard</option>
-                                                   
-              </select>
+          <option value="10">Easy</option>
+          <option value="15">Medium</option>
+          <option value="25">Hard</option>
+        </select>
       </div>
-      <input id="startMazeBtn" type="button" onclick="makeMaze()" value="Start" />
     </div>
 
+    <!-- Maze Map -->
     <div id="view">
       <div id="mazeContainer">
         <canvas id="mazeCanvas" class="border" height="1100" width="1100"></canvas>
       </div>
     </div>
-
-    <p id="instructions">Use arrow keys to move the key to the house!</p>
-
+    <p id="instructions">Use arrow keys < ^ v> or A-D-W-S to move Jack to the Cloud man! <br> Press SPACE or ENTER to
+        start a new maze~</p>
   </div>
 
+
+  <!-- JavaScript -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js"></script>
-  
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js"></script>
   <script src="./script.js"></script>
 </body>
+
 </html>

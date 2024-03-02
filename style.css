@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-html, body {
+html,
+body {
     width: 100vw;
     height: 100vh;
     position: fixed;
@@ -25,17 +26,20 @@ html, body {
     margin: auto;
     border-radius: 10px;
 }
+
 #mazeContainer #mazeCanvas {
     margin: 0;
     display: block;
     border: solid 2px black;
     height: 400px;
 }
-input, select {
+
+input,
+select {
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.30);
     height: 45px;
-    width: 150px;
+    /* width: 150px; */
     padding: 10px;
     border: none;
     border-radius: 5px;
@@ -46,18 +50,26 @@ input, select {
     text-decoration: none;
     appearance: none;
 }
-input:hover, select:hover {
-	background-color: rgba(0, 0, 0, 0.70);
+
+input:hover,
+select:hover {
+    background-color: rgba(0, 0, 0, 0.70);
 }
-input:active, select:active {
-	background-color: black;
+
+input:active,
+select:active {
+    background-color: black;
 }
-input:focus, select:focus {
-	outline: none;
+
+input:focus,
+select:focus {
+    outline: none;
 }
+
 .custom-select {
-	display: inline-block;
+    display: inline-block;
 }
+
 .custom-select select {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -65,7 +77,9 @@ input:focus, select:focus {
     background-repeat: no-repeat;
     background-position: 125px center;
 }
-#Message-Container {
+
+#Win-Message-Container,
+#Lose-Message-Container {
     visibility: hidden;
     color: white;
     display: block;
@@ -76,10 +90,11 @@ input:focus, select:focus {
     left: 0;
     bottom: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.30);
+    background-color: rgba(0, 0, 0, 0.80);
     z-index: 1;
 }
-#Message-Container #message {
+
+#message {
     width: 300px;
     height: 300px;
     position: fixed;
@@ -88,24 +103,29 @@ input:focus, select:focus {
     margin-left: -150px;
     margin-top: -150px;
 }
+
 #page {
-	text-align: center;
-	height: auto;
-	width: auto;
-	margin: auto;
+    text-align: center;
+    height: auto;
+    width: auto;
+    margin: auto;
 }
+
 #page #menu {
     margin: auto;
+    margin-top: 10px;
     padding: 10px;
     height: 65px;
     box-sizing: border-box;
 }
+
 #page #menu h1 {
-    margin: 0;
+    margin-top: 10px;
     margin-bottom: 10px;
     font-weight: 600;
     font-size: 3.2rem;
 }
+
 #page #view {
     position: absolute;
     top: 65px;
@@ -115,18 +135,12 @@ input:focus, select:focus {
     width: 100%;
     height: auto;
 }
+
 .border {
     border: 10px black solid;
     border-radius: 10px;
 }
 
 #instructions {
-    margin-top: 425px;
-}
- 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 400px) {
-	input, select {
-	    width: 120px;
-	}
+    margin-top: 500px;
 }
