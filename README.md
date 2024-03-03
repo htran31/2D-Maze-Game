@@ -4,7 +4,8 @@ by boba-team-mhm
 
 - Team Member:
     1. Hoang-Anh Tran
-    2. 
+    2. Ayssis De los Reyes
+    3. Josephine Nichols
 
 
 - Languages: HTML, CSS, JavaScript
