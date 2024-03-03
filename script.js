@@ -96,10 +96,16 @@ function Maze(Width, Height) {
         };
       }
     }
-    // Choose a random cell to set as an obstacle
+    // Function to toggle obstacle visibility
+    function toggleObstacleVisibility() {
+      mazeMap[obstacleY][obstacleX].obstacle = !mazeMap[obstacleY][obstacleX].obstacle;
+    }
+
     var obstacleX = rand(width);
     var obstacleY = rand(height);
     mazeMap[obstacleY][obstacleX].obstacle = true;
+
+    setInterval(toggleObstacleVisibility, 5000);
   }
 
   function defineMaze() {
@@ -209,8 +215,13 @@ function DrawMaze(Maze, ctx, cellsize, endSprite = null) {
     var x = xCord * cellSize;
     var y = yCord * cellSize;
     if (cell.obstacle) {
+      // ctx.fillStyle = "red";
+      // ctx.fillRect(x + cellSize / 4, y + cellSize / 4, cellSize / 2, cellSize / 2);
+
+      // Draw text "LAZY" 
       ctx.fillStyle = "red";
-      ctx.fillRect(x + cellSize / 4, y + cellSize / 4, cellSize / 2, cellSize / 2);
+      ctx.font = "bold " + "20px Arial";
+      ctx.fillText("LAZY", x + cellSize / 8, y + cellSize / 2);
     }
     if (cell.n == false) {
       ctx.beginPath();
@@ -323,8 +334,8 @@ function Player(maze, c, _cellsize, onComplete, sprite = null) {
 
     // Check for collision with chaser
     if (chaser.x === cellCoords.x && chaser.y === cellCoords.y) {
-      loseGame(); 
-      player.unbindKeyDown(); 
+      loseGame();
+      player.unbindKeyDown();
     }
   };
   function drawSpriteImg(coord) {
@@ -489,6 +500,7 @@ window.onload = function () {
   //   }, 500);
   // }
   // };
+
   sprite = new Image();
   sprite.src =
     "./key.png" +
@@ -549,8 +561,8 @@ function makeMaze() {
 
 // Define a chaser object
 var chaser = {
-  x: 0, 
-  y: 0, 
+  x: 0,
+  y: 0,
 };
 
 function moveChaser() {
@@ -584,13 +596,18 @@ function drawChaser() {
   draw.redrawMaze(cellSize);
   player.redrawPlayer(cellSize);
 
-  ctx.fillStyle = "yellow";
-  ctx.fillRect(
-    chaser.x * cellSize + offsetLeft,
-    chaser.y * cellSize + offsetLeft,
-    cellSize - offsetRight,
-    cellSize - offsetRight
-  );
+  // ctx.fillStyle = "yellow";
+  // ctx.fillRect(
+  //   chaser.x * cellSize + offsetLeft,
+  //   chaser.y * cellSize + offsetLeft,
+  //   cellSize - offsetRight,
+  //   cellSize - offsetRight
+  // );
+
+  // Display text "TIME"
+  ctx.fillStyle = "black";
+  ctx.font = "bold " + "20px Arial";
+  ctx.fillText("TIME", chaser.x * cellSize , chaser.y * cellSize + offsetLeft + 20);
 }
 
 function startChaser() {
