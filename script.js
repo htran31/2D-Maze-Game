@@ -106,6 +106,27 @@ function Maze(Width, Height) {
     mazeMap[obstacleY][obstacleX].obstacle = true;
 
     setInterval(toggleObstacleVisibility, 5000);
+
+    //////
+    // Function to check if the coordinates are in the prohibited list
+    function isProhibitedCoordinate(x, y) {
+    return (x === -1 && y === -1) || (x === 0 && y === 0) || (x === 0 && y === -1) || (x === -1 && y === 0);
+    }
+
+    //Checking is the coordinates are prohibited
+    if (isProhibitedCoordinate(obstacleX,obstacleY)){
+      //if the coordinates are in the corners, this will repetivly select coordinates that are not corners
+      while(true){
+        obstacleX = rand(width);
+        obstacleY = rand(height);
+        if(!isProhibitedCoordinate(obstacleX, obstacleY)){
+          break; //break the loop when the coordinates are okay
+
+        }
+
+      }
+    }
+
   }
 
   function defineMaze() {
