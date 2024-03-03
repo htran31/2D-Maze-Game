@@ -14,6 +14,7 @@
     <!-- Game Over Announcement -->
     <div id="Win-Message-Container">
       <div id="message">
+        <img src="win.gif" alt="WinGame">
         <h1>Congratulations!</h1>
         <p>Damn! You win!</p>
         <input id="okBtn" type="button" onclick="newGame()" value="Win One More Time ?!" />
@@ -26,30 +27,42 @@
         <h1>Oops!</h1>
         <p>You lose!</p>
         <input id="okBtn" type="button" onclick="tryAgain()" value="Damn! Try One More Time ?? " />
-        
+
       </div>
     </div>
 
     <!-- Buttons -->
     <div id="menu">
-      <input id="startMazeBtn" type="button" onclick="makeMaze()" value="New Game" />
+      <h1>Maze Game</h1>
+      <p>--- Will you be able to graduate on time :D ? ---</p>
       <div class="custom-select">
+        <p>Select Size</p>
         <select id="diffSelect">
-          <option value="10">Easy</option>
-          <option value="15">Medium</option>
-          <option value="25">Hard</option>
+          <option value="10">10x10</option>
+          <option value="15">15x15</option>
+          <option value="25">25x25</option>
         </select>
       </div>
+      <div class="custom-select">
+        <p>Select Level</p>
+        <select id="diffSelect">
+          <option value="10">Newbie</option> 
+          <option value="15">Medium</option>
+          <option value="25">Senior</option>
+        </select> 
+      </div>
+      <p id="instructions">Use arrow keys < ^ v> or A-D-W-S to control~ <br> GOAL: Chase to the diploma to graduate!</p>
+
+      <input id="startMazeBtn" type="button" onclick="makeMaze()" value="Start Game" />
     </div>
 
     <!-- Maze Map -->
-    <div id="view">
+    <div id="view"> 
       <div id="mazeContainer">
         <canvas id="mazeCanvas" class="border" height="1100" width="1100"></canvas>
       </div>
     </div>
-    <p id="instructions">Use arrow keys < ^ v> or A-D-W-S to move Jack to the Cloud man! <br> Press SPACE or ENTER to
-        start a new maze~</p>
+
   </div>
 
 

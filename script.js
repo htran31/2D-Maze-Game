@@ -220,7 +220,7 @@ function DrawMaze(Maze, ctx, cellsize, endSprite = null) {
 
       // Draw text "LAZY" 
       ctx.fillStyle = "red";
-      ctx.font = "bold " + "20px Arial";
+      ctx.font = "bold " + "12px Arial";
       ctx.fillText("LAZY", x + cellSize / 8, y + cellSize / 2);
     }
     if (cell.n == false) {
@@ -503,7 +503,7 @@ window.onload = function () {
 
   sprite = new Image();
   sprite.src =
-    "./key.png" +
+    "./student.gif" +
     "?" +
     new Date().getTime();
   sprite.setAttribute("crossOrigin", " ");
@@ -513,7 +513,7 @@ window.onload = function () {
     isComplete();
   };
   finishSprite = new Image();
-  finishSprite.src = "./home.png" +
+  finishSprite.src = "./diploma.gif" +
     "?" +
     new Date().getTime();
   finishSprite.setAttribute("crossOrigin", " ");
@@ -547,6 +547,7 @@ function makeMaze() {
     player = null;
   }
   var e = document.getElementById("diffSelect");
+  document.getElementById("menu").style.visibility = "hidden";
   difficulty = e.options[e.selectedIndex].value;
   cellSize = mazeCanvas.width / difficulty;
   maze = new Maze(difficulty, difficulty);
@@ -606,14 +607,14 @@ function drawChaser() {
 
   // Display text "TIME"
   ctx.fillStyle = "black";
-  ctx.font = "bold " + "20px Arial";
-  ctx.fillText("TIME", chaser.x * cellSize , chaser.y * cellSize + offsetLeft + 20);
+  ctx.font = "bold " + "15px Arial";
+  ctx.fillText("TIME", chaser.x * cellSize, chaser.y * cellSize + offsetLeft + 20);
 }
 
 function startChaser() {
   chaserInterval = setInterval(updateChaser, 100);
 }
-
+ 
 function updateChaser() {
   moveChaser();
   drawChaser();
