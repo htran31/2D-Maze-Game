@@ -10,15 +10,12 @@
 </head>
 
 <body>
-
-
   <div id="page">
     <!--Music-->
     <div id="music">
       <button onclick="playAudio()">Play Music</button>
       <button onclick="pauseAudio()">Pause Music</button>
     </div>
-
 
     <!-- Game Over Announcement -->
     <div id="Win-Message-Container">
@@ -29,14 +26,12 @@
         <input id="okBtn" type="button" onclick="resetGame()" value="Win One More Time ?!" />
       </div>
     </div>
-
     <div id="Lose-Message-Container">
       <div id="message">
         <img src="img/lose.gif" alt="LoseGame">
         <h1>Oops!</h1>
         <p>You lose!</p>
         <input id="okBtn" type="button" onclick="resetGame()" value="Damn! Try One More Time ?? " />
-
       </div>
     </div>
 
@@ -65,15 +60,14 @@
             <option value="4">Senior</option>
           </select>
         </div>
-
       </div>
-     
-      <div id="start">
-         <p id="instructions">Use < ^ v> or A-D-W-S to control <br> GOAL: your diploma</p>
 
+      <div id="start">
+        <p id="instructions">Use < ^ v> or A-D-W-S to control <br> GOAL: your diploma</p>
         <img id="clock-image" src="img/time.png" alt="time">
       </div>
-<input id="startMazeBtn" type="button" onclick="makeMaze()" value="Start Game" />
+
+      <input id="startMazeBtn" type="button" onclick="makeMaze()" value="Start Game" />
     </div>
 
     <!-- Maze Map -->
@@ -82,8 +76,6 @@
         <canvas id="mazeCanvas" class="border" height="1100" width="1100"></canvas>
       </div>
     </div>
-
-
   </div>
 
 
@@ -96,8 +88,6 @@
   <script src="maze.js"></script>
   <script src="player.js"></script>
   <script src="chaser.js"></script>
-
-
 </body>
 
 </html>
