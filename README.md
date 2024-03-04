@@ -1,11 +1,12 @@
 # 2D Maze Game
+Game Jame - The Creative Jam (72-hours long!)
 by boba-team-mhm
 
 
 - Team Member:
-    1. Hoang-Anh Tran
-    2. Ayssis De los Reyes
-    3. Josephine Nichols
+    - Hoang-Anh Tran
+    - Ayssis De los Reyes
+    - Josephine Nichols
 
 
 - Languages: HTML, CSS, JavaScript
