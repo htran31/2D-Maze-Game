@@ -240,9 +240,26 @@ function DrawMaze(Maze, ctx, cellsize, endSprite = null) {
       // ctx.fillRect(x + cellSize / 4, y + cellSize / 4, cellSize / 2, cellSize / 2);
 
       // Draw text "LAZY" 
-      ctx.fillStyle = "red";
-      ctx.font = "bold " + "12px Arial";
-      ctx.fillText("LAZY", x + cellSize / 8, y + cellSize / 2);
+      // ctx.fillStyle = "red";
+      // ctx.font = "bold " + "12px Arial";
+      // ctx.fillText("bye", x + cellSize / 8, y + cellSize / 2);
+
+
+      //Drawing the professor
+      var professor = new Image();
+      professor.src = 'professor.png';
+
+      professor.onload = function(){
+    
+        var desiredWidth = 40;
+        var desiredHeight = 45;
+    
+        // drawing the image
+        ctx.drawImage(professor, x + cellSize / 8, y + cellSize / 2, desiredWidth, desiredHeight);
+      }
+
+
+
     }
     if (cell.n == false) {
       ctx.beginPath();
@@ -294,9 +311,9 @@ function DrawMaze(Maze, ctx, cellsize, endSprite = null) {
           fraction
         );
         if (colorSwap) {
-          ctx.fillStyle = "rgba(0, 0, 0, 0.8)";
+          ctx.fillStyle = "rgba(100, 34, 140, 1)"; //maze wall color?
         } else {
-          ctx.fillStyle = "rgba(255, 255, 255, 0.8)";
+          ctx.fillStyle = "rgba(100, 34, 140, 1)";
         }
         ctx.fill();
         colorSwap = !colorSwap;
@@ -443,6 +460,7 @@ function Player(maze, c, _cellsize, onComplete, sprite = null) {
     drawSprite(cellCoords);
   }
 
+
   this.bindKeyDown = function () {
     window.addEventListener("keydown", check, false);
     $("#view").swipe({
@@ -495,6 +513,7 @@ var mazeCanvas = document.getElementById("mazeCanvas");
 var ctx = mazeCanvas.getContext("2d");
 var sprite;
 var finishSprite;
+var chaserSprite;
 var maze, draw, player;
 var cellSize;
 var difficulty;
@@ -513,6 +532,9 @@ window.onload = function () {
   //Load and edit sprites
   var completeOne = false;
   var completeTwo = false;
+  var completeThree = false;
+
+
   // var isComplete = () => {
   // if (completeOne === true && completeTwo === true) {
   //   console.log("Runs");
@@ -522,9 +544,10 @@ window.onload = function () {
   // }
   // };
 
+  //student
   sprite = new Image();
   sprite.src =
-    "./student.gif" +
+    "./student.png" +
     "?" +
     new Date().getTime();
   sprite.setAttribute("crossOrigin", " ");
@@ -533,6 +556,8 @@ window.onload = function () {
     console.log(completeOne);
     isComplete();
   };
+
+  //goal
   finishSprite = new Image();
   finishSprite.src = "./diploma.gif" +
     "?" +
@@ -543,7 +568,22 @@ window.onload = function () {
     console.log(completeTwo);
     isComplete();
   };
+
+  //time chaser
+  chaserSprite = new Image();
+  chaserSprite.src = "./time.png" +
+    "?" +
+    new Date().getTime();
+  chaserSprite.setAttribute("crossOrigin", " ");
+  chaserSprite.onload = function () {
+    completeThree = true;
+    console.log(completeThree);
+    isComplete();
+  };
+
+
 };
+
 window.onresize = function () {
   let viewWidth = $("#view").width();
   let viewHeight = $("#view").height();
@@ -572,7 +612,7 @@ function makeMaze() {
   difficulty = e.options[e.selectedIndex].value;
   cellSize = mazeCanvas.width / difficulty;
   maze = new Maze(difficulty, difficulty);
-  draw = new DrawMaze(maze, ctx, cellSize, finishSprite);
+  draw = new DrawMaze(maze, ctx, cellSize, finishSprite, chaserSprite);
   player = new Player(maze, mazeCanvas, cellSize, winGame, sprite);
 
   if (document.getElementById("mazeContainer").style.opacity < "100") {
@@ -627,9 +667,20 @@ function drawChaser() {
   // );
 
   // Display text "TIME"
-  ctx.fillStyle = "black";
-  ctx.font = "bold " + "15px Arial";
-  ctx.fillText("TIME", chaser.x * cellSize, chaser.y * cellSize + offsetLeft + 20);
+
+  // ctx.fillStyle = "black";
+  // ctx.font = "bold " + "15px Arial";
+  // ctx.fillText("TIME", chaser.x * cellSize, chaser.y * cellSize + offsetLeft + 20);
+
+  chaserSprite.src = 'time.png';
+  chaserSprite.onload = function(){
+
+    var desiredWidth = 50;
+    var desiredHeight = 50;
+
+    // drawing the image
+    ctx.drawImage(chaserSprite, chaser.x * cellSize, chaser.y * cellSize + offsetLeft + 20, desiredWidth, desiredHeight);
+  }
 }
 
 function startChaser() {
