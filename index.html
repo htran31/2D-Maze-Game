@@ -53,7 +53,7 @@
       </div>
       <p id="instructions">Use arrow keys < ^ v> or A-D-W-S to control~ <br> GOAL: Chase to the diploma to graduate!</p>
 
-      <input id="startMazeBtn" type="button" onclick="makeMaze()" value="Start Game" />
+      <input id="startMazeBtn" type="button" onclick="makeMaze(), playAudio()" value="Start Game" />
     </div>
 
     <!-- Maze Map -->
@@ -71,6 +71,31 @@
   <script type="text/javascript"
     src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js"></script>
   <script src="./script.js"></script>
+
+  <!--Trying to add the music-->
+  <audio id="myAudio" src="sound.mp3"></audio>
+
+  <!--buttons to play music-->
+  <button onclick="playAudio()">Play Music</button> 
+  <button onclick="pauseAudio()">Pause Music</button>
+  
+  <!--puting the music in varible to play the music id-->
+  <script>
+    var audio = document.getElementById("myAudio");
+  
+    // Play the music
+    function playAudio() {
+      audio.play();
+    }
+  
+    // Pause the music
+    function pauseAudio() {
+      audio.pause();
+    }
+  </script>
+
+
+
 </body>
 
 </html>
