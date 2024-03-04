@@ -37,7 +37,7 @@
       <p>--- Will you be able to graduate on time :D ? ---</p>
       <div class="custom-select">
         <p>Select Size</p>
-        <select id="diffSelect">
+        <select id="sizeSelect">
           <option value="10">10x10</option>
           <option value="15">15x15</option>
           <option value="25">25x25</option>
@@ -45,11 +45,12 @@
       </div>
       <div class="custom-select">
         <p>Select Level</p>
-        <select id="diffSelect">
-          <option value="10">Newbie</option> 
-          <option value="15">Medium</option>
-          <option value="25">Senior</option>
-        </select> 
+        <select id="levelSelect">
+          <option value="1">Freshman</option>
+          <option value="2">Sophomore</option>
+          <option value="3">Junior</option>
+          <option value="4">Senior</option>
+        </select>
       </div>
       <p id="instructions">Use arrow keys < ^ v> or A-D-W-S to control~ <br> GOAL: Chase to the diploma to graduate!</p>
 
@@ -57,7 +58,7 @@
     </div>
 
     <!-- Maze Map -->
-    <div id="view"> 
+    <div id="view">
       <div id="mazeContainer">
         <canvas id="mazeCanvas" class="border" height="1100" width="1100"></canvas>
       </div>
@@ -70,7 +71,11 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script type="text/javascript"
     src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js"></script>
-  <script src="./script.js"></script>
+  
+    <script src="./script.js"></script>
+  <script src="maze.js"></script>
+  <script src="player.js"></script>
+  <script src="chaser.js"></script>
 </body>
 
 </html>
